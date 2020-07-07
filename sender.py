@@ -55,7 +55,6 @@ for cell in sheet1['D']:
     customization.append(cell.value)
 customization = list(filter(None, customization))
 
-print(names, emails, subjects, customization)
 # Start the server
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.ehlo()
