@@ -1,0 +1,8 @@
+Greetings {},
+
+This is my newest message test. This time I am trying the message from a seperate text file. Forgive me for once I have finished this then we will be happy. Your school is {}.
+
+Thanks!
+
+Sincerely,
+{}
