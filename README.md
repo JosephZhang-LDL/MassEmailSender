@@ -6,6 +6,12 @@ Before you run this program, make sure you have python3 installed on your machin
 
 This library is crucial for you to be able to run this program.
 
+_ON THE FLIP SIDE_, if you are comfortable running a virtual environment on your computer, all you have to do is enter the command below:
+
+	. venv/bin/activate
+
+and you will be ready to run the program. To exit the venv, use the command `ctrl-d`.
+
 ## Introduction
 
 As of right now, this program is really simple, and mostly used for easy-use cases. That is, you should only use it when you need to concatenate a custom subject to your subject line, add _one_ custom message within the body, and sign off with your name only. If you need to add attachments, that functionality is included as well.

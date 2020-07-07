@@ -6,13 +6,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 
-
-def remove_none(ls):
-    new_ls = ls
-    if new_ls.__contains__(None):
-        new_ls.remove(None)
-    return new_ls
-
 def add_attachment(attachment_name):
     filename = attachment_name
     attachment = open(attachment_name, "rb")
@@ -36,7 +29,7 @@ text_file = open("message.txt", "r")
 text_read = text_file.read()
 
 # Parse the spreadsheet
-wb = xl.load_workbook(r'email_list_test.xlsx')
+wb = xl.load_workbook(r'email_list.xlsx')
 sheet1 = wb['Sheet1']
 
 # Array Definitions
@@ -48,20 +41,21 @@ customization = []
 # Fill the arrays
 for cell in sheet1['A']:
     names.append(cell.value)
-names = remove_none(names)
+names = list(filter(None, names))
 
 for cell in sheet1['B']:
     emails.append(cell.value)
-emails = remove_none(emails)
+emails = list(filter(None, emails))
 
 for cell in sheet1['C']:
     subjects.append(cell.value)
-subjects = remove_none(subjects)
+subjects = list(filter(None, subjects))
 
 for cell in sheet1['D']:
     customization.append(cell.value)
-customization = remove_none(customization)
+customization = list(filter(None, customization))
 
+print(names, emails, subjects, customization)
 # Start the server
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.ehlo()
